@@ -1,4 +1,4 @@
-import { RECEIVE_APPOINTMENT, RECEIVE_APPOINTMENT, REMOVE_APPOINTMENT } from "../actions/appointment_actions";
+import { RECEIVE_APPOINTMENTS, RECEIVE_APPOINTMENT, REMOVE_APPOINTMENT } from "../actions/appointment_actions";
 
 const appointmentsReducer = (state=[], action) => {
   Object.freeze(state);
