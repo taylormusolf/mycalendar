@@ -6,9 +6,8 @@ import Splash from './splash'
 const App = () => (
   <div className='big-div'>
       <div className= 'main-content'>
-      <Switch>
-          <Route exact path="/splash" component={Splash} />
-          <Redirect to="/"/>
+        <Switch>
+          <Route path="/" component={Splash} />
         </Switch>
       </div>
   </div>
