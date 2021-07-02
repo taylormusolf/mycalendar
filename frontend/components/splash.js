@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 //import Calendar from 'react-calendar'
 //import 'react-calendar/dist/Calendar.css';
-import Calendar from './calendar/calendar'
+import Calendar from './calendar/calendar_month'
 import moment from 'moment'
 
 export default function Splash() {

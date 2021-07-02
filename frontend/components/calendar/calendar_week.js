@@ -1,0 +1,17 @@
+import React, {useState, useEffect} from 'react';
+import moment from 'moment';
+import Day from './calendar_day'
+
+export default function Week(props) {
+  return(
+    <div>
+      <ul className='week'>
+        {props.week.days.map((day, i)=>(
+          <li key={i}><Day day={day} key={i} onChange={props.onChange}></Day></li>
+        ))}
+      </ul>
+    </div>
+    
+  )
+
+}

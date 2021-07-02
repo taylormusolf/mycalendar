@@ -1,0 +1,7 @@
+.week, .day-labels{
+  display: flex;
+  justify-content: space-evenly;
+}
+.day{
+  cursor: pointer;
+}
