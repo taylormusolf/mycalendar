@@ -61,10 +61,10 @@ export default function Splash() {
     <div className='app'>
       <div className='app-container'>
         <header>
-          <h1>MyCalendar</h1>
-          <button onClick={()=>changeDate(moment(dateState).subtract(1, 'months'))}>Prev</button>
-          <h2>{moment(dateState).format('MMMM YYYY')}</h2>
-          <button onClick={()=>changeDate(moment(dateState).add(1, 'months'))}>Next</button>
+          <h1>MyCalendar <i className="far fa-calendar-alt"></i></h1>
+          <button onClick={()=>changeDate(moment(dateState).subtract(1, 'months'))}><i className="fas fa-chevron-left" ></i></button>
+          <h2>{moment(dateState).format('MMM YYYY')}</h2>
+          <button onClick={()=>changeDate(moment(dateState).add(1, 'months'))}><i className="fas fa-chevron-right"></i></button>
           <button onClick={()=>changeDate(moment())}>Today</button>
         </header>
         

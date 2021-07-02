@@ -16,5 +16,12 @@ header{
   justify-content: space-between;
   max-width: 500px;
   margin: auto;
-
+  height: 75px;
+  align-items: center;
+  h1{
+    font-size: 25px;
+  }
+  h2{
+    font-size: 20px;
+  }
 }
