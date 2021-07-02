@@ -15,7 +15,7 @@ export default function Month(props) {
     });
   };
   return(
-    <div>
+    <div className='month'>
       <ul className='day-labels'>
         <li>Sun</li>
         <li>Mon</li>

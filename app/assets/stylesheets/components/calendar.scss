@@ -5,3 +5,16 @@
 .day{
   cursor: pointer;
 }
+.month{
+  border-top: black solid 1px;
+}
+.week{
+  border-bottom: black solid 1px;
+}
+.day{
+  border-right: black solid 1px;
+}
+
+.today{
+  background-color: pink;
+}
