@@ -60,18 +60,26 @@ export default function Splash() {
   return (
     <div className='app'>
       <div className='app-container'>
-        <h1>MyCalendar</h1>
-        <h2>{moment(dateState).format('MMMM YYYY')}</h2>
-        <button onClick={()=>changeDate(moment(dateState).subtract(1, 'months'))}>Prev</button>
-        <button onClick={()=>changeDate(moment(dateState).add(1, 'months'))}>Next</button>
-        <button onClick={()=>changeDate(moment())}>Today</button>
-        <Calendar 
-        value={dateState}
-        onChange={changeDate}
-        />
-        <p>Selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
-        {displayAppointment()}
-        {displayCreateAppointment()}
+        <header>
+          <h1>MyCalendar</h1>
+          <button onClick={()=>changeDate(moment(dateState).subtract(1, 'months'))}>Prev</button>
+          <h2>{moment(dateState).format('MMMM YYYY')}</h2>
+          <button onClick={()=>changeDate(moment(dateState).add(1, 'months'))}>Next</button>
+          <button onClick={()=>changeDate(moment())}>Today</button>
+        </header>
+        
+        <div className='calendar'>
+          <Calendar 
+          value={dateState}
+          onChange={changeDate}
+          />
+        </div>
+        <div className='footer'>
+          <p>Selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
+          {displayAppointment()}
+          {displayCreateAppointment()}
+        </div>
+        
       </div>
       
     </div>

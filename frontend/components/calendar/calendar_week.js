@@ -3,8 +3,6 @@ import moment from 'moment';
 import Day from './calendar_day'
 
 export default function Week(props) {
-  //console.log(moment(props.week.days[0]).format("MMM Do YY"));
-  //console.log(moment().format("MMM Do YY"))
   return(
     <div>
       <ul className='week'>

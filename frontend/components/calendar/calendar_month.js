@@ -25,11 +25,12 @@ export default function Month(props) {
         <li>Fri</li>
         <li>Sat</li>
       </ul>
-      <ul>
+      <ul className ='calendar-block'>
         {calendar.map((week, i)=>(
           <li key={i}><Week week={week} onChange={props.onChange} key={i}/></li>
         ))}
       </ul>
+      <p>Selected date is <b>{moment().format()}</b></p>
     </div>
     
   )
