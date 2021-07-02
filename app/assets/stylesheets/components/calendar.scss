@@ -4,12 +4,12 @@
 }
 .week{
   border-bottom: black solid 1px;
-  
 }
 .day{
   cursor: pointer;
   border-left: black solid 1px;
   min-width: 100px;
+  min-height: 100px;
 }
 .month{
   max-width: 708px;
@@ -19,6 +19,8 @@
 }
 .selected{
   background-color: lightcoral;
+}
+.calendar{
 }
 
 .calendar-block{

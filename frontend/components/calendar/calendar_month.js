@@ -30,7 +30,6 @@ export default function Month(props) {
           <li key={i}><Week week={week} onChange={props.onChange} key={i}/></li>
         ))}
       </ul>
-      <p>Selected date is <b>{moment().format()}</b></p>
     </div>
     
   )
