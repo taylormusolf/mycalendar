@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from 'react'
-//import Calendar from 'react-calendar'
-//import 'react-calendar/dist/Calendar.css';
 import Calendar from './calendar/calendar_month'
 import moment from 'moment'
 
@@ -61,8 +59,12 @@ export default function Splash() {
   }
   return (
     <div className='app'>
-      <div>
+      <div className='app-container'>
         <h1>MyCalendar</h1>
+        <h2>{moment(dateState).format('MMMM YYYY')}</h2>
+        <button onClick={()=>changeDate(moment(dateState).subtract(1, 'months'))}>Prev</button>
+        <button onClick={()=>changeDate(moment(dateState).add(1, 'months'))}>Next</button>
+        <button onClick={()=>changeDate(moment())}>Today</button>
         <Calendar 
         value={dateState}
         onChange={changeDate}
