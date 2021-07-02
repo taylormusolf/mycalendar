@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import Calendar from 'react-calendar'
+//import Calendar from 'react-calendar'
 //import 'react-calendar/dist/Calendar.css';
+import Calendar from './calendar/calendar'
 import moment from 'moment'
 
 export default function Splash() {
@@ -61,7 +62,7 @@ export default function Splash() {
   return (
     <div className='app'>
       <div>
-        <h1>My Calendar </h1>
+        <h1>MyCalendar</h1>
         <Calendar 
         value={dateState}
         onChange={changeDate}
