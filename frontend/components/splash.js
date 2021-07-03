@@ -21,7 +21,6 @@ function Splash(props) {
       end_date: endDateState,
       creator_id: 1
     })
-    console.log(props.action(formData))
     props.action(formData);
   }
 
