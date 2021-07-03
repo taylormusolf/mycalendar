@@ -1,5 +1,5 @@
 class Api::AppointmentsController < ApplicationController
-  before_action :require_logged_in!, only: [:create, :update, :destroy]
+  #before_action :require_logged_in!, only: [:create, :update, :destroy]
 
   def index
     @appointments = Appointment.all
@@ -41,7 +41,7 @@ class Api::AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:project).permit(:title, :start_date, :end_date, :creator_id)
+    params.require(:appointment).permit(:title, :start_date, :end_date, :creator_id)
   end
 
 

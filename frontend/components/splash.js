@@ -5,7 +5,7 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import { updateAppointment, createAppointment, deleteAppointment, fetchAppointment} from '../actions/appointment_actions';
 
-function Splash() {
+function Splash(props) {
   const [dateState, setDateState] = useState(new Date());
   const changeDate = (e) => {
     setDateState(e)
@@ -15,13 +15,21 @@ function Splash() {
   const [endDateState, setEndDate] = useState("");
   const handleSubmit = (e) =>{
     e.preventDefault();
+    const formData=({
+      title: titleState,
+      start_date: startDateState,
+      end_date: endDateState,
+      creator_id: 1
+    })
+    console.log(props.action(formData))
+    props.action(formData);
   }
 
   // const [appointmentClickedState, setAppointmentClickedState] = useState(false);
   // const changeAppointmentClickedState = (boolean) =>{
   //   setAppointmentClickedState(boolean)
   // };
-  const [appointmentsState, setAppointmentsState] = useState({'June 25th 2021': {title:'Doctor Appointment', startDate: 'June 25th 2021'}, });
+  const [appointmentsState, setAppointmentsState] = useState("");
   // const changeAppointments = (date) =>{
   //   setAppointmentsState({[date]:{}})
   // }

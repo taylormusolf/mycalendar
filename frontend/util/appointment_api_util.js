@@ -13,23 +13,19 @@ export const fetchAppointment = appointmentId => (
 );
 
 
-export const createAppointment = FormData => (
+export const createAppointment = appointment => (
   $.ajax({
     method: 'POST',
     url: '/api/appointments/',
-    data: FormData,
-    contentType: false,
-    processData: false
+    data: {appointment},
   })
 );
 
-export const updateAppointment = (FormData, appointmentId) => (
+export const updateAppointment = (appointment) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/appointments/${appointmentId}`,
-    data: FormData,
-    contentType: false,
-    processData: false
+    url: `/api/appointments/${appointment.id}`,
+    data: {appointment}
   })
 );
 
