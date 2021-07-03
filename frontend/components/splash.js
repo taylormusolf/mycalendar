@@ -31,7 +31,7 @@ function Splash(props) {
         </div>
         <div className='footer'>
           <p>Selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
-          <button onClick={()=>props.openModal('create')}>Create an appointment</button>
+          <button className='submit-button' onClick={()=>props.openModal('create')}>Create an appointment</button>
         </div>
       </div>
       

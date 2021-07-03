@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import { updateAppointment, createAppointment, deleteAppointment, fetchAppointment} from '../../actions/appointment_actions';
+import { withRouter } from 'react-router';
 
 function Update(props){
   const [titleState, setTitle] = useState(props.appointment.title);
@@ -15,10 +16,11 @@ function Update(props){
       end_date: endDateState,
       creator_id: 1
     })
-    props.updateAppointment(formData).then((action) => props.closeModal());
+    console.log(props.appointment.id)
+    props.updateAppointment(formData, props.appointment.id).then((action) => location.reload());
   }
   const handleDelete = () =>{
-    props.deleteAppointment(props.appointment.id).then((action) => props.closeModal());
+    props.deleteAppointment(props.appointment.id).then((action) => location.reload());
   }
 
   return (
@@ -39,9 +41,9 @@ function Update(props){
             End Date:
             <input type='datetime-local' value={endDateState} onChange={e => setEndDate(e.target.value)}/>
           </label>
-          <input type="submit" value='submit'/>
+          <input className='submit-button' type="submit" value='Submit'/>
           </form>
-          <button onClick={()=>handleDelete()}>Delete</button>
+          <button className='submit-button' onClick={()=>handleDelete()}>Delete</button>
         </div>
       </div>
     </div>
@@ -71,4 +73,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Update);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Update));

@@ -15,7 +15,11 @@ function Create(props){
       end_date: endDateState,
       creator_id: 1
     })
-    props.action(formData).then((action) => props.closeModal());
+    props.action(formData).then((action) => location.reload());
+  }
+
+  const checkDate = () =>{
+    
   }
 
   return (
@@ -36,7 +40,7 @@ function Create(props){
             End Date:
             <input type='datetime-local' value={endDateState} onChange={e => setEndDate(e.target.value)}/>
           </label>
-          <input type="submit" value='submit'/>
+          <input className='submit-button' type="submit" value='Submit'/>
           </form>
         </div>
       </div>

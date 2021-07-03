@@ -21,11 +21,12 @@ class Api::AppointmentsController < ApplicationController
   end
 
   def update
-    @appointment = current_user.appointments.find_by(id: params[:id])
+    #@appointment = current_user.appointments.find_by(id: params[:id])
+    @appointment = Appointment.find_by(id: params[:id])
     if @appointment && @appointment.update(appointment_params)
       render :show
     else
-      render json: @appointment.errors.full_messages, status: 422
+      render json: ["Unable to update appointment"], status: 422
     end
   end
 

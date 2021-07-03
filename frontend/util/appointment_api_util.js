@@ -21,10 +21,10 @@ export const createAppointment = appointment => (
   })
 );
 
-export const updateAppointment = (appointment) => (
+export const updateAppointment = (appointment, id) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/appointments/${appointment.id}`,
+    url: `/api/appointments/${id}`,
     data: {appointment}
   })
 );
