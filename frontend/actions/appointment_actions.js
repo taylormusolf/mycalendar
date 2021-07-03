@@ -1,5 +1,4 @@
 import * as APIUtil from '../util/appointment_api_util';
-
 export const RECEIVE_APPOINTMENTS = 'RECEIVE_APPOINTMENTS';
 export const RECEIVE_APPOINTMENT = 'RECEIVE_APPOINTMENT';
 export const REMOVE_APPOINTMENT = 'REMOVE_APPOINTMENT';
