@@ -1,4 +1,5 @@
 import { RECEIVE_APPOINTMENTS, RECEIVE_APPOINTMENT, REMOVE_APPOINTMENT } from "../actions/appointment_actions";
+import { OPEN_MODAL} from '../actions/modal_actions';
 
 const appointmentsReducer = (state=[], action) => {
   Object.freeze(state);
@@ -12,6 +13,12 @@ const appointmentsReducer = (state=[], action) => {
     case REMOVE_APPOINTMENT:
       delete newState[action.appointmentId]
       return newState;
+    case OPEN_MODAL:
+      if(action.data){
+        return action.data;
+      } else {
+        return state;
+      }
     default: 
       return state;
   }

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import moment from 'moment';
 import { updateAppointment, createAppointment, deleteAppointment, fetchAppointment, fetchAppointments} from '../../actions/appointment_actions';
 import { connect } from 'react-redux';
+import { openModal } from '../../actions/modal_actions';
 
 function Day(props) {
   const [appointmentsState, setAppointments] = useState({})
@@ -26,6 +27,7 @@ function Day(props) {
     let newSelected = event.target
     newSelected.classList.add("selected")
   }
+  useEffect(()=>[appointments])
   const appointments = () =>{
     if(!Object.keys(appointmentsState).length) return null;
     const appointments = Object.values(appointmentsState.appointments);
@@ -48,7 +50,7 @@ function Day(props) {
       <div className='day-date'>{date()}</div>
       <div className='day-appointment'>
         {appointments() ? appointments().map((appt, i)=>(
-          <div key={i}>{moment(appt.start_date).format('LT')} {appt.title}</div>
+          <div key={i} onClick={()=>props.openModal('update', appt)}>{moment(appt.start_date).format('LT')} {appt.title}</div>
         )) : null
         }
       </div>
@@ -70,6 +72,7 @@ const mDTP = dispatch => ({
   fetchAppointment: appointmentId => dispatch(fetchAppointment(appointmentId)),
   fetchAppointments: ()=> dispatch(fetchAppointments()),
   deleteAppointment: () => dispatch(deleteAppointment(appointmentId)),
+  openModal: (modal, data) => dispatch(openModal(modal, data)),
 });
 
 

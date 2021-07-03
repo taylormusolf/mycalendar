@@ -30,7 +30,8 @@ class Api::AppointmentsController < ApplicationController
   end
 
   def destroy
-    @appointment = current_user.appointments.find_by(id: params[:id])
+    #@appointment = current_user.appointments.find_by(id: params[:id])
+    @appointment = Appointment.find_by(id: params[:id])
     if @appointment && @appointment.delete
     else
       render json: ["Unable to delete appointment"], status: 422  
